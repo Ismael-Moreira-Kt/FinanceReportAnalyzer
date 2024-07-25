@@ -27,4 +27,29 @@ public class Report {
         this.change = change;
         this.changePercent = changePercent;
     }
+
+    
+    public DateTime getDate() {
+        return this.date;
+    }
+
+
+    public String getName() {
+        return this.name;
+    }
+
+
+    public double getPrice() {
+        return this.price;
+    }
+
+
+    public double getChange() {
+        return this.change;
+    }
+
+
+    public double getChangePercent() {
+        return this.changePercent;
+    }
 }
