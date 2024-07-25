@@ -8,6 +8,7 @@ import java.util.List;
 import com.fra.model.Report;
 import com.fra.service.DataExtractorService;
 import com.fra.service.DataProcessorService;
+import com.fra.service.DateService;
 import com.fra.util.LoggerUtil;
 
 
@@ -22,10 +23,13 @@ public class App {
     
         DataExtractorService extractorService = new DataExtractorService();
         DataProcessorService processorService = new DataProcessorService();
+        DateService dateService = new DateService();
 
         try {
             List<Report> reports = extractorService.extracReports(url);
             LoggerUtil.getLogger().info("Number of reports extracted: " + reports.size());
+
+            dateService.logDateDifferences(reports);
 
             List<Report> filteredReports = processorService.filterReports(reports);
             LoggerUtil.getLogger().info("Number of filtered reports: " + filteredReports.size()); 
