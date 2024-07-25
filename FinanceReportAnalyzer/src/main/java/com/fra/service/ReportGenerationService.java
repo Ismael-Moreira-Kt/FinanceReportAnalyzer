@@ -40,5 +40,9 @@ public class ReportGenerationService {
             workbook = new XSSFWorkbook();
             sheet = workbook.createSheet("Report");
         }
+
+        if (!headerExists) {
+            createHeaderRow(sheet);
+        }
     }
 }
