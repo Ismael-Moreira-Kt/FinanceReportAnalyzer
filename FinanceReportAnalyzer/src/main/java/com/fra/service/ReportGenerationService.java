@@ -85,4 +85,17 @@ public class ReportGenerationService {
 
         return lastRowNum;
     }
+    
+    
+    private boolean isRowEmpty(Row row) {
+        if (row == null) return true;
+
+        for (int i = 0; i < row.getLastCellNum(); i++) {
+            if (row.getCell(i) != null && !row.getCell(i).toString().trim().isEmpty()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
