@@ -1,6 +1,7 @@
 <h1 align="center">FinanceReportAnalyzer</h1>
 <p>FinanceReportAnalyzer is a Java application that uses Selenium to extract financial data from finance.yahoo.com. The application collects information and saves it in an Excel spreadsheet for future analysis and consultation.</p>
 
+<br><br>
 
 <h2>Contents</h2>
 <p align="center">
@@ -13,6 +14,7 @@
     <a href="#license"> License </a>
 </p>
 
+<br><br>
 
 <h2 id="overview">Overview</h2>
 <p>FinanceReportAnalyzer was developed to automate the collection and analysis of financial data. It is able to:</p>
@@ -23,10 +25,22 @@
     <li><b>Generate Reports:</b> Create a report in Excel format with the data collected.</li>
 </ul>
 
+<br><br>
 
 <h2 id="features">Features</h2>
 <ul>
     <li><b>Data Extraction:</b> Uses Selenium WebDriver to browse and extract information from the Yahoo Finance page.</li>
     <li><b>Report generation:</b> Creates and updates an Excel spreadsheet with the extracted data.</li>
     <li><b>Logging:</b> Uses Log4j to record operations and any errors during execution.</li>
+</ul>
+
+<br><br>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before running the project, you will need:</p>
+<ul>
+    <li>Java Development Kit (JDK) 17 or higher</li>
+    <li>Apache Maven for managing dependencies and building the project</li>
+    <li>ChromeDriver for automation with Selenium</li>
+    <li>Internet to access the Yahoo Finance website</li>
 </ul>
