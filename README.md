@@ -105,3 +105,9 @@
     <li><b>src/main/resources/ -</b> Contains configuration files, such as log4j.properties.</li>
     <li><b>pom.xml -</b> Maven configuration file, including dependencies and plugins.</li>
 </ul>
+
+<br><br>
+
+
+<h2 id="license">License</h2>
+<p>This project is licensed under the <a href="./LICENSE">MIT License</a>.</p>
