@@ -71,10 +71,18 @@ public class DataExtractorService {
                         double changePercent = parseDouble(changePercentText.replace(",", "").replace("%", "").replace("(", "").replace(")", ""));
                         
                         reports.add(new Report(DateTime.now(), name, price, change, changePercent));
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
                     }
                 }
             }
+        } catch(Exception exception) {
+            exception.printStackTrace();
+        } finally {
+            driver.quit();
         }
+
+        return reports;
     }
 
 
