@@ -74,4 +74,15 @@ public class ReportGenerationService {
         row.createCell(3).setCellValue("Change");
         row.createCell(4).setCellValue("Change Percent");
     }
+
+
+    private int getLastRowNum(Sheet sheet) {
+        int lastRowNum = sheet.getLastRowNum();
+
+        while (lastRowNum > 0 && isRowEmpty(sheet.getRow(lastRowNum))) {
+            lastRowNum--;
+        }
+
+        return lastRowNum;
+    }
 }
