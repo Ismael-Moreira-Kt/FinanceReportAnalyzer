@@ -44,5 +44,23 @@ public class ReportGenerationService {
         if (!headerExists) {
             createHeaderRow(sheet);
         }
+
+        int rowNum = fileExists ? getLastRowNum(sheet) + 1 : 1;
+
+        for (Report report : reports) {
+            Row row = sheet.createRow(rowNum++);
+        
+            row.createCell(0).setCellValue(report.getDate().toString());
+            row.createCell(1).setCellValue(report.getName());
+            row.createCell(2).setCellValue(report.getPrice());
+            row.createCell(3).setCellValue(report.getChange());
+            row.createCell(4).setCellValue(report.getChangePercent());
+        }
+
+        try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+            workbook.write(fileOut);
+        }
+
+        workbook.close();
     }
 }
