@@ -45,6 +45,14 @@ public class DataExtractorService {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
+
+            wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+            WebElement ulElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.box.yf-1xmsh2u.upscaled")));
+
+            if (ulElement != null) {
+                List<WebElement> items =  ulElement.findElements(By.cssSelector("li.box-item.primary.yf-lnq200.clickability.hover.upscaled"));
+            }
         }
     }
 }
