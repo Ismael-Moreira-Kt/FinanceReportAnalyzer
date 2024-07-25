@@ -22,3 +22,11 @@
     <li><b>Process Data:</b> Filter and prepare data for reports.</li>
     <li><b>Generate Reports:</b> Create a report in Excel format with the data collected.</li>
 </ul>
+
+
+<h2 id="features">Features</h2>
+<ul>
+    <li><b>Data Extraction:</b> Uses Selenium WebDriver to browse and extract information from the Yahoo Finance page.</li>
+    <li><b>Report generation:</b> Creates and updates an Excel spreadsheet with the extracted data.</li>
+    <li><b>Logging:</b> Uses Log4j to record operations and any errors during execution.</li>
+</ul>
