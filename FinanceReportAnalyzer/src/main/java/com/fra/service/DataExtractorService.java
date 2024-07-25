@@ -2,13 +2,19 @@ package com.fra.service;
 
 
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.fra.model.Report;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 
@@ -30,6 +36,15 @@ public class DataExtractorService {
 
         try {
             driver.get(url);
+
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        
+            try {
+                WebElement rejectButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn.secondary.reject-all")));
+                rejectButton.click();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
         }
     }
 }
