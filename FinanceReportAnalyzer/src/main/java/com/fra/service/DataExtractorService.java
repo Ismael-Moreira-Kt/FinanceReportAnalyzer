@@ -24,7 +24,7 @@ public class DataExtractorService {
 
 
     public List<Report> extracReports(String url) {
-        System.setProperty("webdirever.chrome.driver", CHROME_DRIVER_PATH)
+        System.setProperty("webdirever.chrome.driver", CHROME_DRIVER_PATH);
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
