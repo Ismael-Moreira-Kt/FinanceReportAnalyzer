@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.fra.model.Report;
 
+import org.joda.time.DateTime;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -52,6 +53,26 @@ public class DataExtractorService {
 
             if (ulElement != null) {
                 List<WebElement> items =  ulElement.findElements(By.cssSelector("li.box-item.primary.yf-lnq200.clickability.hover.upscaled"));
+            
+                for(WebElement item : items) {
+                    try {
+                        WebElement nameElement = item.findElement(By.cssSelector("span.symbol.yf-a8quos.valid"));
+                        WebElement priceElement = item.findElement(By.cssSelector("fin-streamer[data-field='regularMarketPrice']"));
+                        WebElement changeElement = item.findElement(By.cssSelector("fin-streamer[data-field='regularMarketChange']"));
+                        WebElement changePercentElement = item.findElement(By.cssSelector("fin-streamer[data-field='regularMarketChangePercent']"));
+                    
+                        String name = nameElement.getText();
+                        String priceText = priceElement.getText();
+                        String changeText = changeElement.getText();
+                        String changePercentText = changePercentElement.getText();
+                    
+                        double price = parseDouble(priceText.replace(",", "").replace("$", ""));
+                        double change = parseDouble(changeText.replace(",", "").replace("$", ""));
+                        double changePercent = parseDouble(changePercentText.replace(",", "").replace("%", "").replace("(", "").replace(")", ""));
+                        
+                        reports.add(new Report(DateTime.now(), name, price, change, changePercent));
+                    }
+                }
             }
         }
     }
