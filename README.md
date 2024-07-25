@@ -44,3 +44,37 @@
     <li>ChromeDriver for automation with Selenium</li>
     <li>Internet to access the Yahoo Finance website</li>
 </ul>
+
+<br><br>
+
+<h2 id="installation">Installation and Configuration</h2>
+<ol>
+    <li><b>Clone the Repository:</b></li>
+
+```bash
+    git clone https://github.com/Ismael-Moreira-Kt/FinanceReportAnalyzer
+    cd FinanceReportAnalyzer
+```
+
+<li><b>Configure ChromeDriver:</b></li>
+<p>Download the ChromeDriver compatible with your browser version and place it in an accessible directory. Update the path to the ChromeDriver in the DataExtractorService class:</p>
+
+```java
+    public static final String CHROME_DRIVER_PATH = "/path/to/chromedriver";
+```
+
+<li><b>Compile and Run the Project:</b></li>
+<p>Compile the project using Maven:</p>
+
+```bash
+    mvn clean package
+```
+
+<p>Run the application:</p>
+
+```bash
+    cd FinanceReportAnalyzer/target
+    java -jar FinanceReportAnalyzer-1.0-SNAPSHOT.jar
+```
+
+</ol>
