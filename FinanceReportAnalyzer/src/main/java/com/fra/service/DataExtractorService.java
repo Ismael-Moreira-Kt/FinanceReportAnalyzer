@@ -76,4 +76,15 @@ public class DataExtractorService {
             }
         }
     }
+
+
+    private double parseDouble(String value) {
+        try {
+            return Double.parseDouble(value);
+        } catch (NumberFormatException exception) {
+            exception.printStackTrace();
+            
+            return 0;
+        }
+    }
 }
