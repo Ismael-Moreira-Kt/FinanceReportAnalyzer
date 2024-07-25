@@ -63,4 +63,15 @@ public class ReportGenerationService {
 
         workbook.close();
     }
+
+
+    private void createHeaderRow(Sheet sheet) {
+        Row row = sheet.createRow(0);
+        
+        row.createCell(0).setCellValue("Date");
+        row.createCell(1).setCellValue("Title");
+        row.createCell(2).setCellValue("Price");
+        row.createCell(3).setCellValue("Change");
+        row.createCell(4).setCellValue("Change Percent");
+    }
 }
