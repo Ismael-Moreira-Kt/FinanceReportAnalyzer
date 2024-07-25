@@ -78,3 +78,14 @@
 ```
 
 </ol>
+
+<br><br>
+
+<h2 id="usage">Usage</h2>
+<p>When you run the application, it will perform the following actions:</p>
+<ul>
+    <li><b>Data Extraction:</b> It will collect financial data from the configured URL.</li>
+    <li><b>Data Processing:</b> Filters and prepares the data.</li>
+    <li><b>Report Generation:</b> It will create or update an Excel spreadsheet with the extracted data.</li>
+</ul>
+<p>The execution logs will be recorded in the logs directory specified in the Log4j configuration.</p>
