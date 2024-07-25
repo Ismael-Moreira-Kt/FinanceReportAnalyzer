@@ -89,3 +89,19 @@
     <li><b>Report Generation:</b> It will create or update an Excel spreadsheet with the extracted data.</li>
 </ul>
 <p>The execution logs will be recorded in the logs directory specified in the Log4j configuration.</p>
+
+<br><br>
+
+<h2 id="structure">Project structure</h2>
+<p>The project is organized as follows:</p>
+<ul>
+    <li><b>src/main/java/com/fra/ -</b> Contains the application source code.</li>
+    <ul>
+        <li><b>App.java -</b> Main class that executes the workflow.</li>
+        <li><b>service/ -</b> Contains services for extracting, processing, generating reports and manipulating dates.</li>
+        <li><b>util/ -</b> Contains utilities, such as the logger configuration.</li>
+        <li><b>model/ -</b> Contains the Report model class.</li>
+    </ul>
+    <li><b>src/main/resources/ -</b> Contains configuration files, such as log4j.properties.</li>
+    <li><b>pom.xml -</b> Maven configuration file, including dependencies and plugins.</li>
+</ul>
