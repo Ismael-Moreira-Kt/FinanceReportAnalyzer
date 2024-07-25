@@ -12,7 +12,11 @@ public class LoggerUtil {
 
 
     public static void configureLogger() {
-        PropertyConfigurator.configure("src/main/resources/log4j.properties");
+        try {
+            PropertyConfigurator.configure(LoggerUtil.class.getClassLoader().getResource("log4j.properties"));
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 
 

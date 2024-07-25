@@ -51,4 +51,45 @@
           <version>5.2.2</version>
         </dependency>
     </dependencies>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.2.4</version>
+            <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                  <goal>shade</goal>
+              </goals>
+              <configuration>
+                <transformers>
+                  <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                    <mainClass>com.fra.App</mainClass>
+                  </transformer>
+                </transformers>
+                <filters>
+                  <filter>
+                    <artifact>*:*</artifact>
+                    <excludes>
+                      <exclude>META-INF/*.SF</exclude>
+                      <exclude>META-INF/*.DSA</exclude>
+                      <exclude>META-INF/*.RSA</exclude>
+                    </excludes>
+                  </filter>
+                </filters>
+                <relocators>
+                  <relocator>
+                    <pattern>org.apache.log4j.</pattern>
+                    <shadedPattern>shade.org.apache.log4j.</shadedPattern>
+                  </relocator>
+                </relocators>
+              </configuration>
+            </execution>
+          </executions>
+          </plugin>
+        </plugins>
+    </build>
 </project>
