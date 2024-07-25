@@ -10,10 +10,10 @@ import com.google.common.collect.Lists;
 
 
 public class DataProcessorService {
-    public List<Report> filteReports(List<Report> reports) {
+    public List<Report> filterReports(List<Report> reports) {
         List<Report> filteredReports = Lists.newArrayList();
         filteredReports.addAll(reports);
         
-        return filteReports(reports);
+        return filteredReports;
     }
 }
